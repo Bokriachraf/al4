@@ -1,0 +1,14 @@
+PROCEDURE insertion(VAR arr : ARRAY_OF INTEGER)
+VAR
+    i,j,rem : INTEGER;
+BEGIN
+    FOR i FROM 1 TO arr.length-1 DO
+        rem := arr [i];
+        j := i-1;
+        WHILE (arr[j] > rem AND  j >= 0 ) DO
+            arr[j+1] := arr[j];
+            j := j-1;
+        END_WHILE
+        arr[j+1] = rem;
+    END_FOR
+END
